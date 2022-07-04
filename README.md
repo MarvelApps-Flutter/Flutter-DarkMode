@@ -1,4 +1,4 @@
-# dark_and_light_mode_2_module
+# Dark_and_light_mode
 
 A new app demonstrating the light and dark theme mode implementation in the flutter app.
 
