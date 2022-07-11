@@ -106,72 +106,74 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   SizedBox _body(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width,
-      child: FractionallySizedBox(
-        widthFactor: 0.85,
-        child: Column(
-          children: [
-            const SizedBox(height: 20),
-            SizedBox(
-              width: double.infinity,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const CircleAvatar(
-                    radius: 15,
-                    backgroundColor: Color(0xFF1C1E2F),
-                    child: Icon(
-                      Icons.cloud,
-                      color: Colors.white,
-                      size: 20,
+      child: SingleChildScrollView(
+        child: FractionallySizedBox(
+          widthFactor: 0.85,
+          child: Column(
+            children: [
+              const SizedBox(height: 20),
+              SizedBox(
+                width: double.infinity,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const CircleAvatar(
+                      radius: 15,
+                      backgroundColor: Color(0xFF1C1E2F),
+                      child: Icon(
+                        Icons.cloud,
+                        color: Colors.white,
+                        size: 20,
+                      ),
                     ),
-                  ),
-                  Column(
-                    children: [
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      CircleAvatar(
-                        backgroundImage: Image.network(
-                                'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80')
-                            .image,
-                        radius: 55,
-                      ),
-                    ],
-                  ),
-                  Icon(Icons.logout_rounded, color: Colors.grey.shade500)
-                ],
+                    Column(
+                      children: [
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        CircleAvatar(
+                          backgroundImage: Image.network(
+                                  'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80')
+                              .image,
+                          radius: 55,
+                        ),
+                      ],
+                    ),
+                    Icon(Icons.logout_rounded, color: Colors.grey.shade500)
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Text(
-              'Rena Figueroa',
-              textScaleFactor: 2.0,
-              style: TextStyle(
-                color: Theme.of(context).textTheme.bodyText1!.color,
+              const SizedBox(
+                height: 20,
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10, bottom: 30),
-              child: Text('rena.figueroa@gmail.com',
-                  style: TextStyle(
-                      color: Theme.of(context).textTheme.bodyText2!.color)),
-            ),
-            _progressCardContainer(context),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 25),
-              child: SizedBox(
-                  width: double.infinity,
-                  child: Text('SETTINGS',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                          color:
-                              Theme.of(context).textTheme.bodyText2!.color))),
-            ),
-            _settingsContainer(context),
-          ],
+              Text(
+                'Rena Figueroa',
+                textScaleFactor: 2.0,
+                style: TextStyle(
+                  color: Theme.of(context).textTheme.bodyText1!.color,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10, bottom: 30),
+                child: Text('rena.figueroa@gmail.com',
+                    style: TextStyle(
+                        color: Theme.of(context).textTheme.bodyText2!.color)),
+              ),
+              _progressCardContainer(context),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 25),
+                child: SizedBox(
+                    width: double.infinity,
+                    child: Text('SETTINGS',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                            color:
+                                Theme.of(context).textTheme.bodyText2!.color))),
+              ),
+              _settingsContainer(context),
+            ],
+          ),
         ),
       ),
     );
